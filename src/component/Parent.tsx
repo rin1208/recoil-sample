@@ -13,6 +13,7 @@ import Message from "./Message";
 import RecoilCount from "./recoilCounter";
 import { useAppContext } from "./util";
 import Message3 from "./Message3";
+import Text1 from "./Text";
 
 export interface Props {}
 
@@ -26,6 +27,9 @@ const Parent: React.FC<Props> = (props: Props) => {
       <Message2 />
       <p>通常描写</p>
       <Message3 />
+      <p>TEXT</p>
+
+      <Text1 />
     </div>
   );
 };

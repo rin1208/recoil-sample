@@ -14,3 +14,15 @@ export const numAtom2 = atom({
   default: 0,
   // effects_UNSTABLE: [persistAtom],
 });
+
+interface TextAtom {
+  textValue: string;
+}
+
+export const text = atom<TextAtom>({
+  key: "text",
+  default: {
+    textValue: "",
+  },
+  // effects_UNSTABLE: [persistAtom],
+});
