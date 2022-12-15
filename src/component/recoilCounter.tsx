@@ -1,13 +1,15 @@
 import { count } from "console";
 import * as React from "react";
+import { SetterOrUpdater, useSetRecoilState } from "recoil";
+import { numAtom2 } from "./atom";
 import { useAppContext } from "./util";
 
 export interface Props {
-  setCount: React.Dispatch<React.SetStateAction<number>>;
+  setCount: SetterOrUpdater<number>;
   count: number;
 }
 
-const Count: React.FC<Props> = (props: Props) => {
+const RecoilCount: React.FC<Props> = (props: Props) => {
   const getColor = () => Math.floor(Math.random() * 255);
   const style = {
     color: `rgb(${getColor()},${getColor()},${getColor()})`,
@@ -19,4 +21,4 @@ const Count: React.FC<Props> = (props: Props) => {
     </div>
   );
 };
-export default Count;
+export default RecoilCount;

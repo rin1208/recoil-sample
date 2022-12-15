@@ -3,18 +3,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import Message from "./component/Message";
 import Count from "./component/counter";
+import { RecoilRoot, useRecoilState } from "recoil";
+import { numAtom } from "./component/atom";
+import RecoilCount from "./component/recoilCounter";
+import Parent from "./component/Parent";
 
 function App() {
-  const [count, setCount] = React.useState(0);
   return (
-    <div className="App">
-      <Message count={count} />
-      <Message count={count} />
-      <Message count={count} />
-      <Message count={count} />
-      <Message count={count} />
-      <Count count={count} setCount={setCount} />
-    </div>
+    <RecoilRoot>
+      <Parent />
+    </RecoilRoot>
   );
 }
 
