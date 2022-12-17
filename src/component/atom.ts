@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, selector } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
 //標準でrecoil-persistというkey名でwebstorageに保存される（オプションで指定可能）
@@ -8,6 +8,15 @@ export const numAtom = atom({
   key: "numberAtom",
   default: 0,
   // effects_UNSTABLE: [persistAtom],
+});
+
+export const selectornum = selector({
+  key: "fontSizeLabelState",
+  get: ({ get }) => {
+    const num = get(numAtom);
+
+    return num + 1;
+  },
 });
 export const numAtom2 = atom({
   key: "number",

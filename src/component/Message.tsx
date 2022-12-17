@@ -1,7 +1,8 @@
 import { count } from "console";
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { numAtom } from "./atom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { numAtom, selectornum } from "./atom";
+import Message2 from "./Message2";
 import RecoilCount from "./recoilCounter";
 import { useAppContext } from "./util";
 
@@ -9,6 +10,8 @@ export interface Props {}
 
 const Message: React.FC<Props> = (props: Props) => {
   const getColor = () => Math.floor(Math.random() * 255);
+  const selectoNum = useRecoilValue(selectornum);
+
   const [num, setNum] = useRecoilState(numAtom);
   useEffect(() => {
     console.log("hugahuga1");
@@ -19,8 +22,12 @@ const Message: React.FC<Props> = (props: Props) => {
   };
   return (
     <div>
-      <h2 style={style}>{num}</h2>
+      <h2 style={style}>
+        {num},{selectoNum}
+      </h2>
       <RecoilCount count={num} setCount={setNum} />
+      <p>Recoilの個別描写</p>
+      <Message2 />
     </div>
   );
 };

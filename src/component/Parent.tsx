@@ -22,14 +22,6 @@ const Parent: React.FC<Props> = (props: Props) => {
     <div className="App">
       <p>Recoilの全体描写</p>
       <Message />
-
-      <p>Recoilの個別描写</p>
-      <Message2 />
-      <p>通常描写</p>
-      <Message3 />
-      <p>TEXT</p>
-
-      <Text1 />
     </div>
   );
 };
