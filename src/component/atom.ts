@@ -24,6 +24,12 @@ export const numAtom2 = atom({
   // effects_UNSTABLE: [persistAtom],
 });
 
+export const numAtom3 = atom({
+  key: "numberAtom3",
+  default: 0,
+  // effects_UNSTABLE: [persistAtom],
+});
+
 interface TextAtom {
   textValue: string;
 }

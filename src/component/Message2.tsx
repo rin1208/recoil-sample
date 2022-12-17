@@ -25,7 +25,7 @@ const Message2: React.FC<Props> = (props: Props) => {
     <div>
       <h2 style={style}>{value}</h2>
       <RecoilCount count={value} setCount={setValue} />
-      <p>通常描写</p>
+      <p>子2</p>
       <Message3 />
     </div>
   );

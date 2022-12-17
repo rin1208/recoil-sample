@@ -10,13 +10,8 @@ export interface Props {
 }
 
 const RecoilCount: React.FC<Props> = (props: Props) => {
-  const getColor = () => Math.floor(Math.random() * 255);
-  const style = {
-    color: `rgb(${getColor()},${getColor()},${getColor()})`,
-  };
   return (
     <div>
-      <p style={style}>Button</p>
       <button onClick={() => props.setCount(props.count + 1)}>Increment</button>
     </div>
   );

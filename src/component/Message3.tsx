@@ -1,7 +1,7 @@
 import { count } from "console";
 import { useEffect, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { numAtom2 } from "./atom";
+import { numAtom2, numAtom3, selectornum } from "./atom";
 import RecoilCount from "./recoilCounter";
 import Text1 from "./Text";
 import { useAppContext } from "./util";
@@ -9,9 +9,12 @@ import { useAppContext } from "./util";
 export interface Props {}
 
 const Message3: React.FC<Props> = (props: Props) => {
-  const [value, setValue] = useState(0);
-
+  const selectoNum = useRecoilValue(selectornum);
   const getColor = () => Math.floor(Math.random() * 255);
+
+  const value = useRecoilValue(numAtom3);
+
+  const setValue = useSetRecoilState(numAtom3);
 
   useEffect(() => {
     console.log("hugahuga3");
@@ -24,10 +27,6 @@ const Message3: React.FC<Props> = (props: Props) => {
     <div>
       <h2 style={style}>{value}</h2>
       <RecoilCount count={value} setCount={setValue} />
-
-      <p>TEXT</p>
-
-      <Text1 />
     </div>
   );
 };

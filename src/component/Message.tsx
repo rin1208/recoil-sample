@@ -22,11 +22,9 @@ const Message: React.FC<Props> = (props: Props) => {
   };
   return (
     <div>
-      <h2 style={style}>
-        {num},{selectoNum}
-      </h2>
+      <h2 style={style}>{num}</h2>
       <RecoilCount count={num} setCount={setNum} />
-      <p>Recoilの個別描写</p>
+      <p>子1</p>
       <Message2 />
     </div>
   );

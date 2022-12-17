@@ -20,7 +20,7 @@ export interface Props {}
 const Parent: React.FC<Props> = (props: Props) => {
   return (
     <div className="App">
-      <p>Recoilの全体描写</p>
+      <p>親</p>
       <Message />
     </div>
   );
