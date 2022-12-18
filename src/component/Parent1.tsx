@@ -11,9 +11,6 @@ const Parent1: React.FC<Props> = (props: Props) => {
   const getColor = () => Math.floor(Math.random() * 255);
 
   const [num, setNum] = useRecoilState(parent1Atom);
-  useEffect(() => {
-    console.log("hugahuga1");
-  });
 
   const style = {
     color: `rgb(${getColor()},${getColor()},${getColor()})`,

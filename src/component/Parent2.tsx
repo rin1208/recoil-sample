@@ -2,7 +2,7 @@ import { count } from "console";
 import { useEffect, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { parent2Atom } from "./atom";
-import Children2 from "../App";
+import Children2 from "./Children2";
 import RecoilCount from "./recoilCounter";
 
 export interface Props {}
@@ -13,10 +13,6 @@ const Parent2: React.FC<Props> = (props: Props) => {
   const value = useRecoilValue(parent2Atom);
 
   const setValue = useSetRecoilState(parent2Atom);
-
-  useEffect(() => {
-    console.log("hugahuga3");
-  });
 
   const style = {
     color: `rgb(${getColor()},${getColor()},${getColor()})`,

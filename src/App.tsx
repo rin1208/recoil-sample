@@ -1,29 +1,24 @@
-import { count } from "console";
-import { useEffect } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { children2Atom } from "./component/atom";
-import RecoilCount from "./component/recoilCounter";
+import { Grid } from "@mui/material";
+import * as React from "react";
+import Parent1 from "./component/Parent1";
+import Parent2 from "./component/Parent2";
 
 export interface Props {}
 
-const Children2: React.FC<Props> = (props: Props) => {
-  const value = useRecoilValue(children2Atom);
-
-  const setValue = useSetRecoilState(children2Atom);
-
-  const getColor = () => Math.floor(Math.random() * 255);
-  useEffect(() => {
-    console.log("hugahuga2");
-  });
-
-  const style = {
-    color: `rgb(${getColor()},${getColor()},${getColor()})`,
-  };
+const App: React.FC<Props> = (props: Props) => {
   return (
-    <div>
-      <h2 style={style}>{value}</h2>
-      <RecoilCount count={value} setCount={setValue} />
+    <div className="App">
+      <Grid container>
+        <Grid item xs={2}>
+          <p>親1</p>
+          <Parent1 />
+        </Grid>
+        <Grid item xs={2}>
+          <p>親2</p>
+          <Parent2 />
+        </Grid>
+      </Grid>
     </div>
   );
 };
-export default Children2;
+export default App;

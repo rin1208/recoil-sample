@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { children1Atom } from "./atom";
+import { children2Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
 
 export interface Props {}
 
-const Children1: React.FC<Props> = (props: Props) => {
-  const value = useRecoilValue(children1Atom);
+const Children2: React.FC<Props> = (props: Props) => {
+  const value = useRecoilValue(children2Atom);
 
-  const setValue = useSetRecoilState(children1Atom);
+  const setValue = useSetRecoilState(children2Atom);
 
   const getColor = () => Math.floor(Math.random() * 255);
 
@@ -22,4 +22,4 @@ const Children1: React.FC<Props> = (props: Props) => {
     </div>
   );
 };
-export default Children1;
+export default Children2;
