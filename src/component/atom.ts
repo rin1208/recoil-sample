@@ -1,7 +1,6 @@
 import { atom, selector } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
-//標準でrecoil-persistというkey名でwebstorageに保存される（オプションで指定可能）
 const { persistAtom } = recoilPersist();
 
 export const parent1Atom = atom({
