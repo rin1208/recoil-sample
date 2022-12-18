@@ -4,34 +4,26 @@ import { recoilPersist } from "recoil-persist";
 //標準でrecoil-persistというkey名でwebstorageに保存される（オプションで指定可能）
 const { persistAtom } = recoilPersist();
 
-export const numAtom = atom({
-  key: "numberAtom",
+export const parent1Atom = atom({
+  key: "parent1Atom",
   default: 0,
   // effects_UNSTABLE: [persistAtom],
 });
 
-export const selectornum = selector({
-  key: "addNumAtom",
-  get: ({ get }) => {
-    const num = get(numAtom);
-
-    return num + 1;
-  },
-});
-export const numAtom2 = atom({
-  key: "number",
+export const parent2Atom = atom({
+  key: "parent2Atom",
   default: 0,
   // effects_UNSTABLE: [persistAtom],
 });
 
-export const numAtom3 = atom({
-  key: "numberAtom3",
+export const children1Atom = atom({
+  key: "children1Atom",
   default: 0,
   // effects_UNSTABLE: [persistAtom],
 });
 
-export const numAtom4 = atom({
-  key: "numberAtom4",
+export const children2Atom = atom({
+  key: "children2Atom",
   default: 0,
   // effects_UNSTABLE: [persistAtom],
 });

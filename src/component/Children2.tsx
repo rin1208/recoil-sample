@@ -1,17 +1,15 @@
 import { count } from "console";
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { numAtom, numAtom2, numAtom4 } from "./atom";
-import Message3 from "./Parent2";
+import { children2Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
-import { useAppContext } from "./util";
 
 export interface Props {}
 
 const Children2: React.FC<Props> = (props: Props) => {
-  const value = useRecoilValue(numAtom4);
+  const value = useRecoilValue(children2Atom);
 
-  const setValue = useSetRecoilState(numAtom4);
+  const setValue = useSetRecoilState(children2Atom);
 
   const getColor = () => Math.floor(Math.random() * 255);
   useEffect(() => {
