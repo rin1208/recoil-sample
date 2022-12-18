@@ -1,8 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Message from "./component/Message";
-import Count from "./component/counter";
+import Message from "./component/Parent1";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { numAtom } from "./component/atom";
 import RecoilCount from "./component/recoilCounter";

@@ -11,7 +11,7 @@ export const numAtom = atom({
 });
 
 export const selectornum = selector({
-  key: "fontSizeLabelState",
+  key: "addNumAtom",
   get: ({ get }) => {
     const num = get(numAtom);
 
@@ -30,14 +30,8 @@ export const numAtom3 = atom({
   // effects_UNSTABLE: [persistAtom],
 });
 
-interface TextAtom {
-  textValue: string;
-}
-
-export const text = atom<TextAtom>({
-  key: "text",
-  default: {
-    textValue: "",
-  },
+export const numAtom4 = atom({
+  key: "numberAtom4",
+  default: 0,
   // effects_UNSTABLE: [persistAtom],
 });
