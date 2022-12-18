@@ -1,14 +1,29 @@
-import React from "react";
-import "./App.css";
-import { RecoilRoot, useRecoilState } from "recoil";
-import Parent from "./component/Parent";
+import { count } from "console";
+import { useEffect } from "react";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { children2Atom } from "./component/atom";
+import RecoilCount from "./component/recoilCounter";
 
-function App() {
+export interface Props {}
+
+const Children2: React.FC<Props> = (props: Props) => {
+  const value = useRecoilValue(children2Atom);
+
+  const setValue = useSetRecoilState(children2Atom);
+
+  const getColor = () => Math.floor(Math.random() * 255);
+  useEffect(() => {
+    console.log("hugahuga2");
+  });
+
+  const style = {
+    color: `rgb(${getColor()},${getColor()},${getColor()})`,
+  };
   return (
-    <RecoilRoot>
-      <Parent />
-    </RecoilRoot>
+    <div>
+      <h2 style={style}>{value}</h2>
+      <RecoilCount count={value} setCount={setValue} />
+    </div>
   );
-}
-
-export default App;
+};
+export default Children2;
