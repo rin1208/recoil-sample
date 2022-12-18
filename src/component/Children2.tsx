@@ -23,8 +23,8 @@ const Children2: React.FC<Props> = (props: Props) => {
     <div>
       <h2 style={style}>{value}</h2>
       <RecoilCount count={value} setCount={setValue} />
-      {/* <h2 style={style}>{value2}</h2>
-      <RecoilCount count={value2} setCount={setValue2} /> */}
+      {/* <h2 style={style}>{value2}, children1Atomの値 </h2> */}
+      {/* <RecoilCount count={value2} setCount={setValue2} /> */}
     </div>
   );
 };

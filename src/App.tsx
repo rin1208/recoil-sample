@@ -3,9 +3,7 @@ import * as React from "react";
 import Parent1 from "./component/Parent1";
 import Parent2 from "./component/Parent2";
 
-export interface Props {}
-
-const App: React.FC<Props> = (props: Props) => {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Grid container>
