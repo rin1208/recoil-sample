@@ -1,8 +1,5 @@
-import { count } from "console";
 import * as React from "react";
-import { SetterOrUpdater, useSetRecoilState } from "recoil";
-import { numAtom2 } from "./atom";
-import { useAppContext } from "./util";
+import { SetterOrUpdater } from "recoil";
 
 export interface Props {
   setCount: SetterOrUpdater<number>;
