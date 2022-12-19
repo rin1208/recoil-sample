@@ -6,10 +6,9 @@ import RecoilCount from "./recoilCounter";
 export interface Props {}
 
 const Parent1: React.FC<Props> = (props: Props) => {
-  const getColor = () => Math.floor(Math.random() * 255);
-
   const [num, setNum] = useRecoilState(parent1Atom);
 
+  const getColor = () => Math.floor(Math.random() * 255);
   const style = {
     color: `rgb(${getColor()},${getColor()},${getColor()})`,
   };
