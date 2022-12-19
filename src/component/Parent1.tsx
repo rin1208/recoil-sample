@@ -1,5 +1,3 @@
-import { count } from "console";
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { parent1Atom } from "./atom";
 import Children1 from "./Children1";
