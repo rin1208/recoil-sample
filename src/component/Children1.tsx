@@ -1,11 +1,9 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { children1Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
 
 const Children1: React.FC = () => {
-  const value = useRecoilValue(children1Atom);
-
-  const setValue = useSetRecoilState(children1Atom);
+  const [num, setNum] = useRecoilState(children1Atom);
 
   const getColor = () => Math.floor(Math.random() * 255);
 
@@ -14,8 +12,8 @@ const Children1: React.FC = () => {
   };
   return (
     <div>
-      <h2 style={style}>{value}</h2>
-      <RecoilCount count={value} setCount={setValue} />
+      <h2 style={style}>{num}</h2>
+      <RecoilCount count={num} setCount={setNum} />
     </div>
   );
 };
