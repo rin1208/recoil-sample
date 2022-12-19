@@ -3,9 +3,7 @@ import { parent1Atom } from "./atom";
 import Children1 from "./Children1";
 import RecoilCount from "./recoilCounter";
 
-export interface Props {}
-
-const Parent1: React.FC<Props> = (props: Props) => {
+const Parent1: React.FC = () => {
   const [num, setNum] = useRecoilState(parent1Atom);
 
   const getColor = () => Math.floor(Math.random() * 255);

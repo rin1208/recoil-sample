@@ -2,9 +2,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { children1Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
 
-export interface Props {}
-
-const Children1: React.FC<Props> = (props: Props) => {
+const Children1: React.FC = () => {
   const value = useRecoilValue(children1Atom);
 
   const setValue = useSetRecoilState(children1Atom);
