@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { children1Atom, children2Atom, parent2Atom } from "./atom";
+import { children1Atom, children2Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
 
 export interface Props {}
@@ -10,7 +9,7 @@ const Children2: React.FC<Props> = (props: Props) => {
 
   const setValue = useSetRecoilState(children2Atom);
 
-  // const value2 = useRecoilValue(children1Atom);
+  const value2 = useRecoilValue(children1Atom);
 
   // const setValue2 = useSetRecoilState(children1Atom);
 
@@ -23,7 +22,7 @@ const Children2: React.FC<Props> = (props: Props) => {
     <div>
       <h2 style={style}>{value}</h2>
       <RecoilCount count={value} setCount={setValue} />
-      {/* <h2 style={style}>{value2}, children1Atomの値 </h2> */}
+      <h2 style={style}>children1Atomの値 : {value2} </h2>
       {/* <RecoilCount count={value2} setCount={setValue2} /> */}
     </div>
   );

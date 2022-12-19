@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { children1Atom } from "./atom";
 import RecoilCount from "./recoilCounter";
